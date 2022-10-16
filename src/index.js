@@ -1,17 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import './index.css'
+import Image from './img/pic.webp'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const MediaCard = ({ title, body, imageURL }) => (
+  <div className="mediaCard">
+     <h2>{title}</h2>
+     <p>{body}</p>
+     <img width={400} src={imageURL} alt="" />
+  </div>
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const MediaPage = () => (
+  <>
+   <MediaCard
+      title="Nature"
+      body="Scenery"
+      imageURL='https://thumbs.dreamstime.com/b/picturesque-autumn-scenery-santa-maddalena-village-church-road-colorful-trees-meadows-foreground-mountain-peaks-159426189.jpg'
+   ></MediaCard>
+   <MediaCard
+      title="Nature"
+      body="Scenery"
+      imageURL='https://thumbs.dreamstime.com/b/picturesque-autumn-scenery-santa-maddalena-village-church-road-colorful-trees-meadows-foreground-mountain-peaks-159426189.jpg'
+   ></MediaCard>
+   <MediaCard
+      title="Nature"
+      body="Scenery"
+      imageURL='https://thumbs.dreamstime.com/b/picturesque-autumn-scenery-santa-maddalena-village-church-road-colorful-trees-meadows-foreground-mountain-peaks-159426189.jpg'
+   ></MediaCard>
+  </>
+)
+
+ReactDOM.render(<MediaPage/>, document.querySelector('#root'));
